@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h3 class="list-group-item-heading" [appHover] = "" [defaultColor]="'black'">{{ car.name }}</h3>
+    <p class="list-group-item-text">Id: {{ car.id }}</p>
+    <p class="list-group-item-text">Название: {{ car.name }}</p>
+    <p class="list-group-item-text">Год: {{ car.year }}</p>
+    <p class="list-group-item-text">Цена: {{ car.price }} $</p>
+    <ng-content></ng-content>
+  </div>
+  <div class="col-xs-4 btn-col">
+    <button class="btn btn-success">Edit</button>
+    <button class="btn btn-danger" (click)="deleteCar(car.name)">Delete</button>
+  </div>
+</div>
+

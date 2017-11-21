@@ -1,0 +1,15 @@
+<app-add-car (carAdded)="addCar($event)"></app-add-car>
+<div class="list-group">
+  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" (deleteCar) = "removeCarFromCars($event)">
+    <div class="row">
+      <div *ngIf="!car.availability" class="alert alert-danger">
+        <span>Car sallen</span>
+      </div>
+    </div>
+  </app-car>
+</div>
+
+
+
+
+

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="input-row">
+        <label for="carName">Введите название машины:</label>
+        <input type="text" id="carName" class="form-control" #carNameInput>
+      </div>
+      <div class="input-row">
+        <label for="carYear">Введите год выпуска:</label>
+        <input type="text" id="carYear" class="form-control" [(ngModel)]="carYear">
+      </div>
+      <div class="input-row">
+        <label for="carPrice">Введите цену на авто:</label>
+        <input type="text" id="carPrice" class="form-control" #carPriceInput>
+      </div>
+
+      <button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+      <p *ngIf="!addCarStatus; else trueStatus">Машина не добавлена</p>
+      <ng-template #trueStatus>
+        <p>Машина добавлена</p>
+      </ng-template>
+      <hr>
+    </div>
+  </div>
+</div>

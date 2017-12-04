@@ -1,0 +1,16 @@
+<div class="tab-title">
+  <div class="row">
+    <div class="col-xs-3 title-item">
+      <a href="" [ngClass]="{'active':added}" (click)="openTabContent('add',$event)">Добавить автомобиль</a>
+    </div>
+    <div class="col-xs-3 title-item">
+      <a href="" [ngClass]="{'active':search}" (click)="openTabContent('search',$event)">Поиск автомобиля</a>
+    </div>
+  </div>
+</div>
+<div class="tab-content">
+  <div class="row" [ngSwitch]="currentTab">
+    <app-add-car *ngSwitchCase="1"></app-add-car>
+    <app-auto-search *ngSwitchCase="2" (SearchCarResult)="searchCarObject($event)" ></app-auto-search>
+</div>
+

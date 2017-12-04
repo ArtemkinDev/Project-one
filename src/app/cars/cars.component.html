@@ -1,16 +1,8 @@
-<app-add-car (carAdded)="addCar($event)"></app-add-car>
-<div class="row">
-  <div class="col-xs-6">
-    <div class="input-row">
-      <label for="carName">Поиск по названию автомобиля:</label>
-      <input type="text" id="carName" class="form-control"  [(ngModel)]="searchCar">
-    </div>
-  </div>
-</div>
+<app-car-tab  (searchCarResultObject)="searchCarObject($event)" ></app-car-tab>
 <div class="list-group">
   <app-car
     class="list-group-item"
-    *ngFor="let car of cars | carFilter:searchCar"
+    *ngFor="let car of cars"
     [carItem]="car"
     (deleteCar)="removeCarFromCars($event)">
     <div class="row">

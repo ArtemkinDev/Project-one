@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="input-row">
+        <label for="carName">Поиск по названию автомобиля:</label>
+        <input type="text" id="carName" class="form-control" [(ngModel)]="searchCar">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="input-row">
+        <label for="carName">Поиск по году выпуска:</label>
+        <input type="text" id="carYear" class="form-control" [(ngModel)]="searchYear">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="input-row">
+        <label for="carName">Поиск по цене:</label>
+        <input type="text" id="carPrice" class="form-control" [(ngModel)]="searchPrice">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="btn btn-primary" (click)="findCar()">Поиск</div>
+    </div>
+  </div>
+</div>
+

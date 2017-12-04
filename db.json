@@ -1,0 +1,46 @@
+{
+  "cars": [
+    {
+      "id": 28,
+      "name": "Ford",
+      "year": 2012,
+      "price": 12000,
+      "availability": true
+    },
+    {
+      "id": 15,
+      "name": "BMW",
+      "year": 2010,
+      "price": 24000,
+      "availability": true
+    },
+    {
+      "id": 8,
+      "name": "Gili",
+      "year": 2008,
+      "price": 6000,
+      "availability": false
+    },
+    {
+      "id": 2,
+      "name": "Mercedes",
+      "year": 1998,
+      "price": 5400,
+      "availability": true
+    },
+    {
+      "id": 64565775572,
+      "name": "Mercedes",
+      "year": 2004,
+      "price": 8000,
+      "availability": false
+    },
+    {
+      "id": 1512417159640,
+      "name": "Huinday",
+      "year": "2008",
+      "price": "3244",
+      "availability": true
+    }
+  ]
+}

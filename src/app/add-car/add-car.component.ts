@@ -1,5 +1,6 @@
-import {Component, OnInit, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {Car} from '../car/Car';
+import {CarsService} from '../cars.service';
 
 @Component({
   selector: 'app-add-car',
@@ -7,32 +8,33 @@ import {Car} from '../car/Car';
   styleUrls: ['./add-car.component.scss']
 })
 export class AddCarComponent implements OnInit {
-  @Output('carAdded') carEmitte = new EventEmitter<Car>();
   @ViewChild('carNameInput') carNameInput: ElementRef;
   @ViewChild('carPriceInput') carPriceInput: ElementRef;
 
   public carYear;
   public addCarStatus = false;
+  public cars: Car[];
 
   addCar() {
     this.addCarStatus = true;
 
-    this.carEmitte.emit({
+    this.service.newCarAdded({
       id: Date.now(),
       name: this.carNameInput.nativeElement.value,
       year: this.carYear,
       price: this.carPriceInput.nativeElement.value,
       availability: true
-    });
+    })
+      .subscribe((car: Car) => {
+
+      });
 
     this.carNameInput.nativeElement.value = ' ';
     this.carPriceInput.nativeElement.value = ' ';
   }
 
-  constructor() {
-  }
+  constructor(private service: CarsService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
